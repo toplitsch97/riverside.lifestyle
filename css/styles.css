@@ -42,7 +42,8 @@ a{color:inherit;text-decoration:none}
 /* ===================== NAV ===================== */
 .nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(7,8,12,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;gap:28px;height:var(--nav-h);max-width:1280px;margin:0 auto;padding:0 44px}
-.brandmark{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.02em}
+.brandmark{display:inline-flex;align-items:center;gap:12px;font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.02em}
+.brandmark__logo{height:48px;width:auto;display:block}
 .nav-meta{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-right:auto}
 .nav-links{display:flex;gap:30px;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
 .nav-links a{position:relative;padding:4px 0;color:var(--muted);transition:color .2s}
