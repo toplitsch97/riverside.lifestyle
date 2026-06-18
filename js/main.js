@@ -11,29 +11,18 @@
   var isMobile = window.matchMedia('(max-width: 920px)').matches;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- Mobile: alle Panels dunkel, Video startet erst beim Antippen ----
-  // 1. Tap auf ein dunkles Panel -> Video spielt, andere bleiben dunkel.
-  // 2. Tap auf das bereits aktive Panel -> Weiterleitung zur Website.
+  // ---- Mobile: erstes Panel spielt als Vorschau, andere bleiben dunkel.
+  //      Tap auf irgendein Panel leitet direkt zur jeweiligen Website weiter. ----
   if (isMobile) {
-    var activateM = function (panel) {
-      panels.forEach(function (x) {
-        var on = x === panel;
-        x.classList.toggle('is-active', on);
-        var v = x.querySelector('video');
-        if (v) {
-          if (on) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
-          else { v.pause(); }
-        }
-      });
-    };
-    panels.forEach(function (p) {
-      p.addEventListener('click', function (e) {
-        if (p.classList.contains('is-active')) return; // schon aktiv -> Link folgen
-        e.preventDefault();
-        activateM(p);
-      });
+    panels.forEach(function (x, k) {
+      var on = k === 0;
+      x.classList.toggle('is-active', on);
+      var v = x.querySelector('video');
+      if (v) {
+        if (on) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+        else { v.pause(); }
+      }
     });
-    activateM(panels[0]); // erstes Panel spielt, die anderen sind dunkel
     return;
   }
 
