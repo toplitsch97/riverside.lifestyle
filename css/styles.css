@@ -144,11 +144,12 @@ a{color:inherit;text-decoration:none}
   .wrap{padding:0 22px}
   .nav-in{padding:0 22px}
   .nav-meta,.nav-links a[href="#kontakt"]{display:none}
-  .hero{height:auto;min-height:0}
-  .hero-overlay{padding:22px 22px 70px}
-  .panels{position:static;flex-direction:column;height:auto}
+  .hero{height:auto;min-height:0;display:flex;flex-direction:column}
+  .hero-overlay{position:static;order:-1;background:#07080c;padding:26px 22px 18px}
+  .hero-overlay h1{font-size:clamp(28px,7vw,42px);max-width:none}
+  .panels{position:static;order:0;flex-direction:column;height:auto}
   .panel{flex:none;height:240px;border-right:none;border-bottom:1px solid var(--line)}
-  .panel.is-active{flex:none;height:300px}
+  .panel.is-active{flex:none;height:320px}
   .intro-grid{grid-template-columns:1fr;gap:18px}
   .intro-grid .kicker,.intro-h,.intro-p{grid-column:1}
   .intro-h{grid-row:auto}
